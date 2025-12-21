@@ -1,0 +1,119 @@
+.checkout-header {
+  height: 60px;
+  padding-left: 0;
+  padding-right: 30px;
+  background-color: white;
+
+  display: flex;
+  justify-content: flex-start;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.checkout-header .header-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.checkout-header .checkout-header-left-section {
+  width: 220px;
+}
+
+.checkout-header .checkout-header-left-section a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+}
+
+.checkout-header .logo {
+  height: 40px;
+  margin-top: 0px;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.checkout-header .mobile-logo {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .checkout-header .checkout-header-left-section {
+    width: auto;
+  }
+
+  .checkout-header .logo {
+    display: none;
+  }
+
+  .checkout-header .mobile-logo {
+    display: inline-block;
+    height: 40px;
+    object-fit: contain;
+  }
+}
+
+.checkout-header .checkout-header-middle-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-header .return-to-home-link {
+  color: rgb(25, 135, 84);
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .checkout-header .checkout-header-middle-section {
+    font-size: 20px;
+    margin-right: 60px;
+  }
+
+  .checkout-header .return-to-home-link {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .checkout-header .checkout-header-middle-section {
+    margin-right: 5px;
+  }
+}
+
+.checkout-header .checkout-header-right-section {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.checkout-header .checkout-header-right-section img {
+  height: 28px;
+  width: auto;
+}
+
+/* Tint the white logos to green */
+.checkout-header .logo,
+.checkout-header .mobile-logo {
+  filter: invert(56%) sepia(63%) saturate(446%) hue-rotate(96deg)
+    brightness(94%) contrast(90%);
+}
