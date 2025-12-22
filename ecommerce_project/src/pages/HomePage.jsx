@@ -3,11 +3,21 @@ import { products } from '../../starting-code/data/products';
 import './HomePage.css';
 
 export function HomePage() {
+    fetch('http://localhost:4000/api/products')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+        })//is used for getting data from server
+    
+    
     return (
         <> 
      <title>Ecommerce Project </title>
        
-    <Header />
+            <Header />
+            
             <div className="home-page">
                 <div className="products-grid">
             {products.map((product) => {
