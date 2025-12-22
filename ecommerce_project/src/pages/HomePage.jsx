@@ -1,16 +1,20 @@
+import axios from 'axios';
+import { useEffect, useState} from 'react';
 import { Header } from '../components/Header'
-import { products } from '../../starting-code/data/products';
 import './HomePage.css';
 
 export function HomePage() {
-    fetch('http://localhost:4000/api/products')
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-        })//is used for getting data from server
+    const [products, setProducts] = useState([]);
     
+    
+    useEffect(() => {
+        axios.get('http://localhost:4000/api/products')
+        .then((response) => {
+            setProducts(response.data); 
+        })
+    });
+    
+    // this is the simple version without using state to store products and get from backend
     
     return (
         <> 
