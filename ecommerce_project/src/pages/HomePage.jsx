@@ -4,9 +4,9 @@ import { Header } from '../components/Header'
 import { formatMoney } from '../utils/money';   
 import './HomePage.css';
 
+
 export function HomePage({cart}) {
     const [products, setProducts] = useState([]);
-    
     
     
     useEffect(() => {
@@ -15,7 +15,6 @@ export function HomePage({cart}) {
                 setProducts(response.data);
             });
 
-        
     }, []);
     
     // this is the simple version without using state to store products and get from backend
