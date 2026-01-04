@@ -5,28 +5,47 @@ import { PaymentSummary } from "./PaymentSummary";
 import "./checkout-header.css";
 import "./CheckoutPage.css";
 
-
-export function CheckoutPage({ cart }) {
+export function CheckoutPage({ cart, loadCart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
-  // Track selected delivery option per productId
   const [selectedDeliveryOptions, setSelectedDeliveryOptions] = useState({});
+  const [isUpdating, setIsUpdating] = useState(false);
 
+  // 🔹 Fetch checkout data
   useEffect(() => {
     const fetchCheckoutData = async () => {
-      let response = await axios.get("/api/delivery-options?expand=estimatedDeliveryTime"
+      let response = await axios.get(
+        "/api/delivery-options?expand=estimatedDeliveryTime"
       );
       setDeliveryOptions(response.data);
 
-      response = await axios.get("/api/payment-summary").then((response) => {
-        setPaymentSummary(response.data);
-    
-      });
+      response = await axios.get("/api/payment-summary");
+      setPaymentSummary(response.data);
     };
     fetchCheckoutData();
-  }, []);
+  }, [cart]);
 
-  // Initialize selected delivery options from cart when cart changes
+  // Function to update payment summary
+  const updatePaymentSummary = async (productId, deliveryOptionId) => {
+    setIsUpdating(true);
+    try {
+      // Update cart item with selected delivery option
+      await axios.put(`/api/cart-items/${productId}`, {
+        deliveryOptionId: String(deliveryOptionId),
+      });
+
+      // Reload cart to reflect changes
+      await loadCart();
+
+      // Fetch updated payment summary
+      const response = await axios.get("/api/payment-summary");
+      setPaymentSummary(response.data);
+    } finally {
+      setIsUpdating(false);
+    }
+  };
+
+  // 🔹 Initialize selected delivery options from cart
   useEffect(() => {
     if (Array.isArray(cart)) {
       const initial = {};
@@ -35,8 +54,7 @@ export function CheckoutPage({ cart }) {
           initial[item.productId] = item.deliveryOptionsId;
         }
       });
-      // Only initialize if we don't already have a selection,
-      // to avoid overwriting the user's choice on subsequent renders.
+
       setSelectedDeliveryOptions((prev) =>
         Object.keys(prev).length ? prev : initial
       );
@@ -51,10 +69,14 @@ export function CheckoutPage({ cart }) {
         <div className="header-content">
           <div className="checkout-header-left-section">
             <a href="/">
-              <img className="logo" src="/images/logo-white.png" alt="Logo" />
+              <img
+                className="logo"
+                src="/images/markethub_logo.png"
+                alt="Logo"
+              />
               <img
                 className="mobile-logo"
-                src="/images/mobile-logo-white.png"
+                src="/images/markethub_logo.png"
                 alt="Logo"
               />
             </a>
@@ -83,8 +105,10 @@ export function CheckoutPage({ cart }) {
             deliveryOptions={deliveryOptions}
             selectedDeliveryOptions={selectedDeliveryOptions}
             setSelectedDeliveryOptions={setSelectedDeliveryOptions}
+            updatePaymentSummary={updatePaymentSummary}
+            loadCart={loadCart}
           />
-          <PaymentSummary paymentSummary={paymentSummary} />
+          <PaymentSummary paymentSummary={paymentSummary} loadCart={loadCart} />
         </div>
       </div>
     </>

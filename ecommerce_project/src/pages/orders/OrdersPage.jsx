@@ -12,9 +12,9 @@ export function OrdersPage({ cart }) {
     const fetchOrdersData = async () => {
       const response = await axios.get("/api/orders?expand=products");
       setOrders(response.data);
-    }
-    
-  },[]);
+    };
+    fetchOrdersData();
+  }, []);
 
   return (
     <>
@@ -80,7 +80,9 @@ export function OrdersPage({ cart }) {
                         </div>
 
                         <div className="product-actions">
-                          <a href="/tracking">
+                          <a
+                            href={`/tracking?orderId=${order.id}&productId=${orderProduct.product.id}`}
+                          >
                             <button className="track-package-button button-secondary">
                               Track package
                             </button>

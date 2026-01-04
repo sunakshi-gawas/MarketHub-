@@ -1,6 +1,25 @@
 import { formatMoney } from "../../utils/money";
+import axios from "axios";
 import dayjs from "dayjs";
-export function DeliveryOptions({ deliveryOptions , cartItem, selectedId, setSelectedDeliveryOptions }) {
+export function DeliveryOptions({
+  deliveryOptions,
+  loadCart,
+  cartItem,
+  selectedId,
+  setSelectedDeliveryOptions,
+  updatePaymentSummary,
+}) {
+  const handleDeliveryChange = async (optionId) => {
+    // Update local state
+    setSelectedDeliveryOptions((prev) => ({
+      ...prev,
+      [cartItem.productId]: optionId,
+    }));
+
+    // Update backend and payment summary
+    await updatePaymentSummary(cartItem.productId, optionId);
+  };
+
   return (
     <div className="delivery-options">
       <div className="delivery-options-title">Choose a delivery option:</div>
@@ -19,12 +38,7 @@ export function DeliveryOptions({ deliveryOptions , cartItem, selectedId, setSel
           <div
             key={option.id}
             className="delivery-option"
-            onClick={() =>
-              setSelectedDeliveryOptions((prev) => ({
-                ...prev,
-                [cartItem.productId]: option.id,
-              }))
-            }
+            onClick={() => handleDeliveryChange(option.id)}
           >
             <input
               type="radio"
@@ -32,12 +46,7 @@ export function DeliveryOptions({ deliveryOptions , cartItem, selectedId, setSel
               name={`delivery-option-${cartItem.productId}`}
               value={option.id}
               checked={!!isSelected}
-              onChange={(e) =>
-                setSelectedDeliveryOptions((prev) => ({
-                  ...prev,
-                  [cartItem.productId]: Number(e.target.value), // ✅ FIXED
-                }))
-              }
+              onChange={(e) => handleDeliveryChange(e.target.value)}
             />
 
             <div>

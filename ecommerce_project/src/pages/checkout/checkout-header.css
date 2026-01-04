@@ -68,13 +68,14 @@
 
   font-size: 22px;
   font-weight: 500;
+  color: rgb(0, 0, 0);
 
   display: flex;
   justify-content: center;
 }
 
 .checkout-header .return-to-home-link {
-  color: rgb(25, 135, 84);
+  color: rgb(13, 19, 16);
 
   text-decoration: none;
   cursor: pointer;
@@ -111,9 +112,8 @@
   width: auto;
 }
 
-/* Tint the white logos to green */
+/* Logo styling for trendora */
 .checkout-header .logo,
 .checkout-header .mobile-logo {
-  filter: invert(56%) sepia(63%) saturate(446%) hue-rotate(96deg)
-    brightness(94%) contrast(90%);
+  /* Filter removed to show original trendora logo colors */
 }

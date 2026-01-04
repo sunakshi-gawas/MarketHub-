@@ -20,46 +20,56 @@ select {
   cursor: pointer;
 }
 
-input, select, button {
+input,
+select,
+button {
   font-family: Roboto, Arial;
 }
 
 .button-primary {
   color: rgb(255, 255, 255);
-  background-color: rgb(25, 135, 84);
+  background-color: rgb(167, 139, 250);
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(220, 220, 220, 0.5);
+  transition: all 0.2s ease;
 }
 
 .button-primary:hover {
-  background-color: rgba(25, 135, 84, 0.75);
+  background-color: rgb(139, 92, 246);
   border: 1px solid transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
 }
 
 .button-primary:active {
-  background: rgba(25, 135, 84, 0.5);
+  background: rgb(124, 58, 237);
   border-color: transparent;
-  box-shadow: none;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.2);
 }
 
 .button-secondary {
-  color: rgb(33, 33, 33);
+  color: rgb(167, 139, 250);
   background: white;
-  border: 1px solid rgb(200, 200, 200);
-  border-radius: 5px;
+  border: 1px solid rgb(167, 139, 250);
+  border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(220, 220, 220, 0.2);
+  transition: all 0.2s ease;
 }
 
 .button-secondary:hover {
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(245, 243, 255);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(167, 139, 250, 0.2);
 }
 
 .button-secondary:active {
-  background-color: rgb(240, 240, 240);
-  box-shadow: none;
+  background-color: rgb(237, 233, 254);
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(167, 139, 250, 0.15);
 }
 
 /* These styles will limit text to 2 lines. Anything
@@ -75,8 +85,9 @@ input, select, button {
 }
 
 .link-primary {
-  color: rgb(25, 135, 84);
+  color: rgb(167, 139, 250);
   cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .link-primary:hover {
