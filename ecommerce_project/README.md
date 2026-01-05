@@ -261,8 +261,7 @@ npm test -- --watch
 This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
-
-Built with ❤️ using React + Vite
+Sunakshi Gawas
 
 ---
 
