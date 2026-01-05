@@ -15,10 +15,7 @@ A modern, full-featured e-commerce web application built with React and Vite. Th
 ### Product Grid
 
 ![Product Grid](project%20ss/ss2.png)
-
-### Shopping Cart
-
-![Shopping Cart](project%20ss/ss3.png)
+(project%20ss/ss3.png)
 
 ### Checkout Page
 
@@ -28,15 +25,15 @@ A modern, full-featured e-commerce web application built with React and Vite. Th
 
 ![Order Confirmation](project%20ss/ss5.png)
 
-### Orders Page
+### profile Page
 
-![Orders Page](project%20ss/ss6.png)
+![Profile Page](project%20ss/ss6.png)
 
 ### Order Tracking
 
 ![Order Tracking](project%20ss/ss7.png)
 
-### User Profile
+### order Tracking Detail 
 
 ![User Profile](project%20ss/ss8.png)
 
@@ -44,13 +41,13 @@ A modern, full-featured e-commerce web application built with React and Vite. Th
 
 ![My Orders](project%20ss/ss9.png)
 
-### Saved Addresses
-
-![Saved Addresses](project%20ss/ss10.png)
-
 ### Payment Methods
 
-![Payment Methods](project%20ss/ss11.png)
+![Payment Methods](project%20ss/ss10.png)
+
+### WishLists
+
+![WishLists](project%20ss/ss11.png)
 
 ## 🚀 Features
 
