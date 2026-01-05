@@ -15,7 +15,9 @@ A modern, full-featured e-commerce web application built with React and Vite. Th
 ### Product Grid
 
 ![Product Grid](project%20ss/ss2.png)
-(project%20ss/ss3.png)
+
+### Placed Order Details 
+![Placed Order Details](project%20ss/ss3.png)
 
 ### Checkout Page
 
@@ -37,9 +39,9 @@ A modern, full-featured e-commerce web application built with React and Vite. Th
 
 ![User Profile](project%20ss/ss8.png)
 
-### My Orders (Profile)
+### Save Address (Profile)
 
-![My Orders](project%20ss/ss9.png)
+![Save Address Profile](project%20ss/ss9.png)
 
 ### Payment Methods
 
@@ -254,33 +256,6 @@ ecommerce_project/
 | `npm run preview` | Preview production build             |
 | `npm run lint`    | Run ESLint                           |
 | `npm test`        | Run tests with Vitest                |
-
-## 📱 Responsive Breakpoints
-
-| Breakpoint | Columns | Description      |
-| ---------- | ------- | ---------------- |
-| > 1400px   | 7       | Full desktop     |
-| 1300px     | 6       | Large desktop    |
-| 1000px     | 5       | Desktop          |
-| 800px      | 4       | Tablet landscape |
-| 575px      | 3       | Tablet portrait  |
-| 450px      | 2       | Mobile           |
-
-## 🔗 API Endpoints
-
-The app connects to a local Express.js backend:
-
-| Method | Endpoint                | Description          |
-| ------ | ----------------------- | -------------------- |
-| GET    | `/api/products`         | Fetch all products   |
-| GET    | `/api/cart-items`       | Get cart items       |
-| POST   | `/api/cart-items`       | Add to cart          |
-| PUT    | `/api/cart-items/:id`   | Update cart item     |
-| DELETE | `/api/cart-items/:id`   | Remove from cart     |
-| GET    | `/api/orders`           | Get order history    |
-| POST   | `/api/orders`           | Create new order     |
-| GET    | `/api/delivery-options` | Get shipping options |
-| GET    | `/api/payment-summary`  | Get payment totals   |
 
 ## 💰 Currency
 
