@@ -2,9 +2,14 @@ import { formatMoney } from "../../utils/money";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
-export function PaymentSummary({ paymentSummary, loadCart }) {
-const navigate = useNavigate();
-  const createOrder = async () => { 
+export function PaymentSummary({ paymentSummary, loadCart, validateForm }) {
+  const navigate = useNavigate();
+  const createOrder = async () => {
+    // Validate form before placing order
+    if (validateForm && !validateForm()) {
+      return;
+    }
+
     await axios.post("/api/orders");
     await loadCart();
     navigate("/orders");
@@ -51,8 +56,10 @@ const navigate = useNavigate();
             </div>
           </div>
 
-          <button className="place-order-button button-primary"
-          onClick={createOrder}>
+          <button
+            className="place-order-button button-primary"
+            onClick={createOrder}
+          >
             Place your order
           </button>
         </>

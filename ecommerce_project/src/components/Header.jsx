@@ -26,6 +26,11 @@ export function Header({ cart }) {
       </div>
 
       <div className="right-section">
+        <Link className="profile-link header-link" to="/profile">
+          <span className="profile-icon">👤</span>
+          <span className="profile-text">Account</span>
+        </Link>
+
         <Link className="orders-link header-link" to="/orders">
           <span className="orders-text">Orders</span>
         </Link>

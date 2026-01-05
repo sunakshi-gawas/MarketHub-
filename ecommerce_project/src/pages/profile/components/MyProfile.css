@@ -1,0 +1,243 @@
+.my-profile {
+  padding: 0;
+}
+
+.my-profile .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.my-profile .section-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.my-profile .edit-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+/* Profile Card */
+.my-profile .profile-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 24px;
+}
+
+/* Profile Picture Section */
+.my-profile .profile-picture-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.my-profile .profile-picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.my-profile .profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgb(196, 165, 230);
+}
+
+.my-profile .profile-picture-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgb(196, 165, 230) 0%,
+    rgb(167, 139, 250) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid rgb(196, 165, 230);
+}
+
+.my-profile .profile-picture-placeholder span {
+  font-size: 48px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.my-profile .change-photo-btn {
+  background: transparent;
+  border: 1px dashed rgb(167, 139, 250);
+  color: rgb(167, 139, 250);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.my-profile .change-photo-btn:hover {
+  background: rgba(167, 139, 250, 0.1);
+}
+
+/* Profile Details */
+.my-profile .profile-details {
+  display: grid;
+  gap: 20px;
+}
+
+.my-profile .detail-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.my-profile .detail-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.my-profile .detail-row label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+.my-profile .detail-value {
+  font-size: 15px;
+  color: #333;
+}
+
+.my-profile .edit-input {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.my-profile .edit-input:focus {
+  outline: none;
+  border-color: rgb(167, 139, 250);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
+}
+
+/* Profile Actions */
+.my-profile .profile-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.my-profile .save-button,
+.my-profile .cancel-button {
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* Security Section */
+.my-profile .security-section {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.my-profile .security-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.my-profile .security-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.my-profile .security-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.my-profile .security-btn:hover {
+  background: #f0f0f0;
+  border-color: rgb(196, 165, 230);
+}
+
+.my-profile .security-btn.danger:hover {
+  background: #fff5f5;
+  border-color: #e53935;
+}
+
+.my-profile .security-icon {
+  font-size: 24px;
+}
+
+.my-profile .security-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.my-profile .security-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.my-profile .security-desc {
+  font-size: 13px;
+  color: #888;
+}
+
+.my-profile .security-btn .arrow {
+  font-size: 18px;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .my-profile .detail-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .my-profile .profile-actions {
+    flex-direction: column;
+  }
+
+  .my-profile .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

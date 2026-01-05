@@ -5,6 +5,7 @@ import { HomePage } from "./pages/home/HomePage";
 import { CheckoutPage } from "./pages/checkout/CheckoutPage";
 import { OrdersPage } from "./pages/orders/OrdersPage";
 import { TrackingPage } from "./pages/TrackingPage";
+import { ProfilePage } from "./pages/profile/ProfilePage";
 
 import "./App.css";
 
@@ -29,6 +30,10 @@ function App() {
       />
       <Route path="orders" element={<OrdersPage cart={cart} />} />
       <Route path="tracking" element={<TrackingPage cart={cart} />} />
+      <Route
+        path="profile"
+        element={<ProfilePage cart={cart} loadCart={loadCart} />}
+      />
     </Routes>
   );
 }

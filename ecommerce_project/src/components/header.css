@@ -157,3 +157,34 @@
   width: 26px;
   text-align: center;
 }
+
+/* Profile Link */
+.header .profile-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header .profile-icon {
+  font-size: 18px;
+}
+
+.header .profile-text {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@media (max-width: 675px) {
+  .header .profile-text {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .header .right-section {
+    width: auto;
+  }
+}
